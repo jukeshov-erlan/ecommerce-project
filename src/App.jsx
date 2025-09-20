@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home/HomePage";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
-import OrdersPage from "./pages/OrdersPage";
+import OrdersPage from "./pages/orders/OrdersPage";
 import TrackingPage from "./pages/TrackingPage";
 import PageNotFound from "./pages/PageNotFount";
 import "./App.css";
@@ -15,10 +15,8 @@ function App() {
     axios.get("/api/cart-items?expand=product").then((response) => {
       setCart(response.data);
       console.log(response.data);
-      
     });
-
-  }, [])
+  }, []);
   return (
     <>
       <Routes>
