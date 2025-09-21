@@ -13,7 +13,7 @@ export default function CheckoutPage({ cart }) {
     const fetchCheckoutData = async () => {
       let response = await axios.get(
         "/api/delivery-options?expand=estimatedDeliveryTime"
-      );
+      );      
 
       setDeliveryOptions(response.data);
 
@@ -26,7 +26,7 @@ export default function CheckoutPage({ cart }) {
     <>
       <title>Checkout</title>
       <link rel="icon" type="image/svg+xml" href="cart-favicon.png" />
-      <CheckoutHeader />
+      <CheckoutHeader cart={cart}/>
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
 
