@@ -28,9 +28,15 @@ export default function TrackingPage({ cart }) {
   });
 
   const totalDeliveryTimeMs =
-    orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
-  const timePassedMs = dayjs().valueOf();
-  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
+    orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs; // это 7 суток
+  console.log(totalDeliveryTimeMs);
+
+  const timePassedMs = dayjs().valueOf() - order.orderTimeMs; // это сколько прошло
+  console.log(timePassedMs);
+
+  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100; // это процент до
+  console.log(deliveryPercent);
+
   if (deliveryPercent > 100) {
     deliveryPercent = 100;
   }
