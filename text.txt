@@ -2,11 +2,8 @@ import dayjs from "dayjs";
 import axios from "axios";
 import formatMoney from "../../utils/money";
 
-export default function DeliveryOptions({
-  deliveryOptions,
-  cartItem,
-  loadCart,
-}) {
+export default function DeliveryOptions({ deliveryOptions, cartItem, loadCart }) {
+
   return (
     <div className="delivery-options">
       <div className="delivery-options-title">Choose a delivery option:</div>
