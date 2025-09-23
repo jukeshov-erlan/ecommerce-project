@@ -35,7 +35,7 @@ export default function DeliveryOptions({
               checked={deliveryOption.id === cartItem.deliveryOptionId}
               onChange={() => {}}
               className="delivery-option-input"
-              name={`delivery-option-${deliveryOption.id}`}
+              name={`delivery-option-${cartItem.productId}`}
             />
             <div>
               <div className="delivery-option-date">

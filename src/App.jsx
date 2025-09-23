@@ -9,7 +9,7 @@ import PageNotFound from "./pages/PageNotFount";
 import "./App.css";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]);  
 
   async function loadCart() {
     try {
@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route index element={<HomePage cart={cart} loadCart={loadCart} />} />
         <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart} />} />
-        <Route path="orders" element={<OrdersPage cart={cart} />} />
+        <Route path="orders" element={<OrdersPage cart={cart} loadCart={loadCart} />} />
         <Route
           path="tracking/:orderId/:productId"
           element={<TrackingPage cart={cart} />}
