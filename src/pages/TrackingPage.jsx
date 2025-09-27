@@ -10,7 +10,7 @@ export default function TrackingPage({ cart }) {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-    async function fetchTrackingData() {
+    const fetchTrackingData = async() => {
       const response = await axios.get(
         `/api/orders/${orderId}?expand=products`
       );

@@ -319,3 +319,8 @@
     width: auto;
   }
 }
+
+.quantity-input {
+  width: 50px;
+  border-radius: 5px;
+}

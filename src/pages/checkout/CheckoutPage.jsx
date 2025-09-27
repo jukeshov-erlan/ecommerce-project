@@ -20,7 +20,7 @@ export default function CheckoutPage({ cart, loadCart }) {
   }, []);
 
   useEffect(() => {
-    async function fetchPaymentSummary() {
+    const fetchPaymentSummary = async() => {
       const response = await axios.get("/api/payment-summary");
       setPaymentSummary(response.data);
     }

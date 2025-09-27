@@ -8,7 +8,7 @@ export default function OrdersPage({ cart, loadCart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    async function fetchOrdersData() {
+    const fetchOrdersData = async() => {
       const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
     }
