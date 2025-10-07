@@ -29,7 +29,7 @@ export default function Product({ product, loadCart }) {
   return (
     <div className="product-container" data-testid="product-container">
       <div className="product-image-container">
-        <img className="product-image" src={product.image} alt={product.name}/>
+        <img className="product-image" src={product.image} alt={product.name} />
       </div>
 
       <div className="product-name limit-text-to-2-lines">{product.name}</div>
@@ -38,8 +38,8 @@ export default function Product({ product, loadCart }) {
         <img
           className="product-rating-stars"
           src={`images/ratings/rating-${product.rating.stars * 10}.png`}
-          data-testid='product-rating-stars'
-/>
+          data-testid="product-rating-stars"
+        />
         <div className="product-rating-count link-primary">
           {product.rating.count}
         </div>
@@ -48,7 +48,11 @@ export default function Product({ product, loadCart }) {
       <div className="product-price">{formatMoney(product.priceCents)}</div>
 
       <div className="product-quantity-container">
-        <select value={quantity} onChange={selectQuantity}>
+        <select
+          value={quantity}
+          onChange={selectQuantity}
+          data-testid="quantity-selector"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -72,7 +76,11 @@ export default function Product({ product, loadCart }) {
         Added
       </div>
 
-      <button className="add-to-cart-button button-primary" onClick={addToCart} data-testid="add-to-cart-button">
+      <button
+        className="add-to-cart-button button-primary"
+        onClick={addToCart}
+        data-testid="add-to-cart-button"
+      >
         Add to Cart
       </button>
     </div>
