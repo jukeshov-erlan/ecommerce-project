@@ -10,12 +10,12 @@ export default function TrackingPage({ cart }) {
   const [order, setOrder] = useState(null);
 
   useEffect(() => {
-    const fetchTrackingData = async() => {
+    const fetchTrackingData = async () => {
       const response = await axios.get(
         `/api/orders/${orderId}?expand=products`
       );
       setOrder(response.data);
-    }
+    };
     fetchTrackingData();
   }, [orderId]);
 
@@ -29,10 +29,8 @@ export default function TrackingPage({ cart }) {
 
   const totalDeliveryTimeMs =
     orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs; // это 7 суток
-  console.log(totalDeliveryTimeMs);
 
   const timePassedMs = dayjs().valueOf() - order.orderTimeMs; // это сколько прошло
-  console.log(timePassedMs);
 
   let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100; // это процент до
   console.log(deliveryPercent);
